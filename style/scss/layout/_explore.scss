@@ -1,0 +1,93 @@
+.explore{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: baseline;
+    padding-top: 8rem;
+    margin-top: -7rem;
+    gap: 4rem;
+
+    &__content{
+        color: hsl(var(--clr-light));
+        display: flex;
+        flex-direction: row; 
+        align-items: center;
+        justify-content: center;
+        gap: 4rem; 
+
+        &--map{
+            text-transform: none;
+            height: 700px;
+            width: 1200px;  
+        }
+    }
+}
+
+@media only screen and (max-width: 41rem) {
+    .explore{
+        padding-top: 9rem;
+        margin-top: -7rem;
+        padding-bottom: 4rem;
+        height: fit-content;
+        gap: 3rem;
+    
+        &__content{
+            color: hsl(var(--clr-light));
+            display: flex;
+            flex-direction: column; 
+            align-items: center;
+            justify-content: center;
+            gap: 4rem; 
+    
+            &--map{
+                text-transform: none;
+                height: 500px;
+                width: 350px;  
+            }
+        }
+    }                 
+}
+
+@media only screen and (min-width: 41rem) and (max-width: 80rem){
+    .explore{
+        padding-top: 9rem;
+        margin-top: -7rem;
+        padding-bottom: 6rem;
+        height: fit-content;
+        gap: 3rem;
+    
+        &__content{
+            color: hsl(var(--clr-light));
+            display: flex;
+            flex-direction: column; 
+            align-items: center;
+            justify-content: center;
+            gap: 4rem; 
+    
+            &--map{
+                text-transform: none;
+                height: 600px;
+                width: 600px;  
+            }
+        }
+    }                  
+}
+
+@media only screen and (min-width: 80rem) and (max-width: 110rem){
+    .explore{
+        padding-top: 9rem;
+        margin-top: -7rem;
+        padding-bottom: 8rem;
+        height: fit-content;
+        gap: 4rem;
+    
+        &__content{ 
+            flex-direction: column;
+            &--map{
+                text-transform: none;
+                height: 700px;
+                width: 1000px;  
+            }
+        }
+    }                  
+}

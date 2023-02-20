@@ -1,0 +1,18 @@
+@use '../abstracts/colors' as *;
+@use '../abstracts/type' as *;
+
+:root{
+    @each $name, $value in $colors {
+        --clr-#{$name}: #{$value};   
+    }
+
+    --ff-sans: #{$font-family};
+
+    @each $name, $value in $font-weight {
+        --fw-#{$name}: #{$value};   
+    }
+
+    @each $name, $value in $font-sizes {
+        --fs-#{$name}: #{$value};   
+    }
+}

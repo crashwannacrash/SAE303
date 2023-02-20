@@ -1,0 +1,38 @@
+.header{
+    z-index: 1001;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    flex-direction:row;
+    padding-top: 0.9rem;
+    padding-bottom: 0.5rem;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: transparent;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 3rem;
+
+    &__link{
+        display: flex;
+        flex-direction:column;
+        gap: 0.5rem;
+        align-items: center;
+        justify-content: center;
+
+        &--svg{
+            height: 30px;
+            width: 30px;
+            fill: hsl(var(--clr-light));
+        }
+
+        &--txt{
+            color: hsl(var(--clr-light));
+            font-size: 0.75rem;
+            font-weight: var(--fw-400);
+            letter-spacing: 7px;
+            padding-left: 0.4rem;
+        }
+    }
+    
+}

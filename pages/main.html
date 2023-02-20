@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://pngimg.com/uploads/comet/comet_PNG32.png">
+    <link rel="stylesheet" href="../style/css/main.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="">
+    <title>main</title>
+</head>
+<body>
+
+    
+
+    <div class="main">
+        <div class="header">
+            <a href="../index.html" class="header__link">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="header__link--svg" width="1280.000000pt" height="1280.000000pt" viewBox="0 0 1280.000000 1280.000000" preserveAspectRatio="xMidYMid meet">
+                    <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)"
+                    fill="white" stroke="none">
+                    <path d="M11036 12789 c-1543 -104 -3347 -912 -4866 -2178 -580 -484 -1209
+                    -1133 -1623 -1673 l-82 -107 -830 0 c-473 -1 -879 -5 -945 -11 -162 -15 -314
+                    -45 -467 -95 -477 -156 -891 -500 -1260 -1046 -151 -224 -257 -419 -619 -1141
+                    l-344 -688 1432 0 1433 0 1493 -1493 1492 -1492 0 -1433 0 -1432 688 344 c719
+                    361 873 444 1086 583 752 491 1132 1053 1196 1763 6 67 10 462 10 945 l1 830
+                    92 70 c290 220 672 559 1007 895 653 652 1196 1346 1657 2115 608 1014 1013
+                    2082 1152 3040 54 371 54 373 58 1323 l4 892 -823 -1 c-453 -1 -877 -6 -942
+                    -10z m-1966 -2999 c101 -25 249 -93 334 -154 71 -51 198 -180 245 -249 53 -78
+                    119 -226 143 -323 31 -125 31 -362 0 -477 -155 -567 -727 -881 -1275 -700
+                    -142 47 -259 117 -369 222 -180 170 -285 383 -307 623 -49 514 300 977 807
+                    1073 106 20 310 13 422 -15z"/>
+                    <path d="M2104 3598 c-311 -315 -361 -372 -477 -548 -282 -429 -535 -1128
+                    -701 -1935 -48 -237 -48 -231 -11 -227 81 8 352 58 533 98 742 165 1388 441
+                    1772 758 25 21 179 171 343 334 l297 297 -742 742 c-409 409 -745 743 -748
+                    743 -3 0 -123 -118 -266 -262z"/>
+                    </g>
+                </svg>
+                <p class="header__link--txt">home</p>
+            </a>
+            <a href="#nav" class="header__link drop-target">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="header__link--svg"><path d="M5 7h14c.6 0 1-.4 1-1s-.4-1-1-1H5c-.6 0-1 .4-1 1s.4 1 1 1zm0 6h14c.6 0 1-.4 1-1s-.4-1-1-1H5c-.6 0-1 .4-1 1s.4 1 1 1zm0 6h14c.6 0 1-.4 1-1s-.4-1-1-1H5c-.6 0-1 .4-1 1s.4 1 1 1z"/></svg>
+                <p class="header__link--txt">dataviz</p>
+            </a>
+        </div>
+          
+        <!-- NAV  -->
+        <div class="nav" id="nav">
+            <a href="#explore" class="nav__btn">explore landing sites</a>
+            <div class="nav__small">
+                <a href="#peryear" class="nav__btn nav__btn--small">meteorites per year</a>
+                <a href="#weight" class="nav__btn nav__btn--small">highest fall per year</a>
+                <a href="#fell" class="nav__btn nav__btn--small">fell/found percentage</a>
+            </div>
+        </div>
+        
+        <!-- SEARCH BAR  -->
+        <section class="search screen" id="search">
+            <h3 class="cat--title">search bar</h3>
+            <div class="search__container">
+                <div class="searchWrapper">
+                    <input type="text" name="searchBar" class="searchBar" placeholder="search for a meteorite"/>
+                </div>
+                <ul class="suggestion--list"></ul>
+            </div>
+        </section>
+
+        <!-- LANDING SITES  -->
+        <section class="explore screen" id="explore">
+            <h3 class="cat--title">explore landing sites</h3>
+            <div class="explore__content">
+                <div class="explore__content--map" id="map">
+                    <!-- MAP -->
+                </div>
+                <div class="explore__content--txt">
+                    <div class="selected">
+                        <p class="selected--title">selected point</p>
+                        <p class="selected--hidden">click on a marker to see its properties</p>
+                        <div class="selected__content">
+                            <ul class="selected__list">
+                                <li class="selected__items">name:</li>
+                                <li class="selected__items">id:</li>
+                                <li class="selected__items">mass(g):</li>
+                                <li class="selected__items">fell/found:</li>
+                                <li class="selected__items">geoloc:</li>
+                                <li class="selected__items">year of the fall:</li>
+                                <li class="selected__items">class:</li>
+                            </ul>
+                            <ul class="selected__list selected__list--template"></ul>
+                            
+                            <template class="template__selected">
+                                <li class="selected__items selected__items--template">{{name}}</li>
+                                <li class="selected__items selected__items--template">{{id}}</li>
+                                <li class="selected__items selected__items--template">{{mass}}</li>
+                                <li class="selected__items selected__items--template">{{fell}}</li>
+                                <li class="selected__items selected__items--template">{{geoloc}}</li>
+                                <li class="selected__items selected__items--template">{{year}}</li>
+                                <li class="selected__items selected__items--template">{{recclass}}</li>
+                            </template>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- METEORITES PER YEAR   -->
+        <section class="peryear screen" id="peryear">
+            <h3 class="cat--title">meteorites per year</h3>
+            <div class="peryear__content">
+                <canvas class="lineGraph"></canvas>
+            </div>   
+        </section>
+        
+        <!-- HIGHEST PER YEAR   -->
+        <section class="weight screen" id="weight">
+            <h3 class="cat--title">highest fall per year</h3>
+            <div class="weight__content">
+                <canvas class="polarGraph"></canvas>
+            </div>    
+        </section>
+
+        <!-- FELL FOUND  -->
+        <section class="fell screen" id="fell">
+            <h3 class="cat--title">fell/found percentage</h3>
+            <div class="fell__content">
+                <canvas class="donutGraph"></canvas>
+            </div>    
+        </section>
+
+        
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-treemap.min.js"></script>
+	<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    <script src="../script/main.js"></script>    
+    <script src="../script/test.js"></script>    
+</body>
+</html>

@@ -1,0 +1,55 @@
+.fell{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: baseline;
+    padding-top: 8rem;
+    margin-top: -7rem;
+    gap: 4rem;
+
+    &__content{
+        height: 650px;
+        aspect-ratio: 1/1;
+    }
+    
+}
+
+@media only screen and (max-width: 41rem) {
+    .fell{
+        height: fit-content;
+        padding-top: 9rem;
+        margin-top: -7rem;
+        padding-bottom: 4rem;
+    
+        &__content{
+            width: 350px;
+            height: 350px;
+        }
+        
+    }                    
+}
+
+@media only screen and (min-width: 41rem) and (max-width: 80rem){
+    .fell{
+        height: fit-content;
+        padding-top: 9rem;
+        margin-top: -7rem;
+        padding-bottom: 6rem;
+    
+        &__content{
+            width: 600px;
+            height: 600px;
+        }
+        
+    }                      
+}
+
+@media only screen and (min-width: 80rem) and (max-width: 110rem){
+    .fell{
+        height: fit-content;
+        padding-top: 9rem;
+        margin-top: -7rem;
+        padding-bottom: 8rem;
+        
+    }                    
+}
